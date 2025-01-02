@@ -2,7 +2,9 @@ import pygame
 
 WIDTH = 800
 HEIGHT = 600
+FPS = 60
 
 pygame.init()
 
 win = pygame.display.set_mode((WIDTH, HEIGHT))
+clock = pygame.time.Clock()
