@@ -8,3 +8,5 @@ pygame.init()
 
 win = pygame.display.set_mode((WIDTH, HEIGHT))
 clock = pygame.time.Clock()
+
+WALL_SIZE = 50

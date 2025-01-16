@@ -1,13 +1,19 @@
 from settings import *
-from sprites.base_classes import GameSprite
+from sprites.player import Player
+from sprites.base_classes import Obstacle
 
 
 class GameController:
     def __init__(self):
         self.screen = "game"
+        self.player = Player("textures/player_up1.png", 100, 100, 50, 50, 3, 100)
+        self.wall = Obstacle("textures/wall.png", 200, 200, 5, False)
 
     def _game(self):
         win.fill((100, 200, 100))
+        self.player.move()
+        self.player.draw()
+        self.wall.draw()
         pygame.display.update()
         clock.tick(FPS)
 

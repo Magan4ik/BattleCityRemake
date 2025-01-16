@@ -16,3 +16,17 @@ class GameSprite(pygame.sprite.Sprite):
 
     def draw(self):
         win.blit(self.image, self.rect)
+
+
+class Entity(GameSprite):
+    def __init__(self, image, x, y, width, height, speed, hp):
+        super().__init__(image, x, y, width, height)
+        self.speed = speed
+        self.hp = hp
+
+
+class Obstacle(GameSprite):
+    def __init__(self, image, x, y, hp, immortal):
+        super().__init__(image, x, y, WALL_SIZE, WALL_SIZE)
+        self.immortal = immortal
+        self.hp = hp
