@@ -1,19 +1,21 @@
 from settings import *
 from sprites.player import Player
 from sprites.base_classes import Obstacle
+from map_manager import MapManager
 
 
 class GameController:
     def __init__(self):
         self.screen = "game"
-        self.player = Player("textures/player_up1.png", 100, 100, 50, 50, 3, 100)
-        self.wall = Obstacle("textures/wall.png", 200, 200, 5, False)
+        self.player = Player("textures/player_up1.png", 400, 500, 50, 50, 3, 100)
+        self.map_manager = MapManager("maps/map1.txt")
+        self.map_manager.load_map()
 
     def _game(self):
         win.fill((100, 200, 100))
         self.player.move()
         self.player.draw()
-        self.wall.draw()
+        walls.draw(win)
         pygame.display.update()
         clock.tick(FPS)
 
