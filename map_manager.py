@@ -1,5 +1,6 @@
 from settings import *
 from sprites.base_classes import Obstacle
+from sprites.enemy import Enemy, ToPlayerStrategy
 
 
 class MapManager:
@@ -13,6 +14,8 @@ class MapManager:
                 for x, sym in enumerate(line):
                     if sym == "W":
                         walls.add(Obstacle("textures/wall.png", x*WALL_SIZE, y*WALL_SIZE, 5, False))
+                    elif sym == "E":
+                        enemies.add(Enemy("textures/enemy.png", x*WALL_SIZE, y*WALL_SIZE, 50, 50, 2, 2, ToPlayerStrategy()))
                     elif sym == "-":
                         pass
 

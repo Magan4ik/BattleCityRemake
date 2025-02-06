@@ -13,3 +13,5 @@ WALL_SIZE = 50
 
 walls = pygame.sprite.Group()
 bullets = pygame.sprite.Group()
+enemies = pygame.sprite.Group()
+enemy_bullets = pygame.sprite.Group()
