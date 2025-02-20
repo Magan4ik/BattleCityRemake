@@ -9,6 +9,7 @@ class MapManager:
 
     def load_map(self):
         walls.empty()
+        enemies.empty()
         with open(self.filename, 'r', encoding='utf-8') as map:
             for y, line in enumerate(map):
                 for x, sym in enumerate(line):
